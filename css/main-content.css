@@ -5,7 +5,7 @@ body.dashboard-body {
 }
 
 .main-content {
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     padding: 1.5rem 1rem;
     display: flex;
@@ -44,4 +44,18 @@ body.dashboard-body {
 #countour-map {
     margin: 0px 20px 0px 10px;
     min-width: 400px;
+}
+
+#hover-message, #hover-message2 {
+    font-family: 'Futura', sans-serif;
+    display: none;
+    padding: 10px;
+    color: #000; /* Text color */
+    background-color: #f0f0f0; /* Background color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s ease-in;
 }
