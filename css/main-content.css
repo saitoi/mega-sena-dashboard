@@ -5,12 +5,12 @@ body.dashboard-body {
 }
 
 .main-content {
-    max-width: 1128px;
+    max-width: 80%;
     margin: auto;
     padding: 1.5rem 1rem;
-    display: grid;
-    flex-flow: column wrap;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -21,13 +21,27 @@ body.dashboard-body {
 }
 
 .graph-container {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     background-color: #ffffff;
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     border-radius: 0.5rem;
-    /*width: 500px;*/
+}
+
+.graph-container:hover {
+    transform: translateY(-1px); /* Moves the container up by 10 pixels */
+    box-shadow: 0 12px 16px rgba(0,0,0,0.1); /* Increases shadow for elevated effect */
 }
 
 .graph-content {
-    padding: 1.25rem 1rem;
+    padding: 1rem 1rem;
+}
+
+#mean-prizes {
+    width: 800px;
+}
+
+#countour-map {
+    margin: 0px 20px 0px 10px;
+    min-width: 400px;
 }

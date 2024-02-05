@@ -34,12 +34,21 @@ fig.add_trace(
 )
 
 fig.update_layout(
+    width=800,
+    height=600,
     yaxis2=dict(
         overlaying='y',
         side='right'
     ),
-    plot_bgcolor='white',  # Set the background color to white
-    paper_bgcolor='white',  # Set the paper background color to white
+    plot_bgcolor='white',
+    paper_bgcolor='white',
+    legend=dict(
+        orientation="h",
+        x=0.5,
+        y=1.1,
+        xanchor="center",
+        yanchor="bottom"
+    )
 )
 
 print(fig.to_html(full_html=False, include_plotlyjs='cdn'))
