@@ -19,6 +19,7 @@
     </div>
 </header>
 
+
 <main class="main-content">
     <div class="sidebar">
         <div class="dezenas">
@@ -33,10 +34,20 @@
                     </div>
                 `).join('');
                 container.innerHTML = itemsHtml;
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.getElementById('grid-container');
+                    const specialNumbers = [8, 17, 26, 35, 43, 52];
+                    const itemsHtml = [...Array(60)].map((_, index) => {
+                        const isSpecial = specialNumbers.includes(index + 1);
+                        return `<div class="grid-item${isSpecial ? ' special' : ''}" data-index="${index + 1}">
+                    ${index + 1}
+                </div>`;
+                    }).join('');
+                    container.innerHTML = itemsHtml;
+                });
             </script>
         </div>
     </div>
-
     <div class="graph-container" id="mean-prizes">
         <div>
             <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>

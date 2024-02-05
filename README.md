@@ -3,9 +3,9 @@
 ## Visão Geral
 Este projeto é um dashboard para visualização de resultados da Mega-Sena, a loteria mais popular do Brasil. O dashboard permite aos usuários visualizar os últimos resultados, analisar frequências de números, entre outros insights estatísticos.
 
-## Prévia
+## Prévia - Por Enquanto
 
-
+![Preview Dashboard Mega-sena](assets/dashboard-mega-sena-screenshot.png)
 
 ## Recursos
 - Visualização dos resultados dos últimos sorteios.

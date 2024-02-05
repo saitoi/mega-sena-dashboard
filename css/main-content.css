@@ -5,8 +5,9 @@ body.dashboard-body {
 }
 
 .main-content {
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
+    /*margin-left: calc(100% - 300px);*/
     padding: 1.5rem 1rem;
     display: flex;
     flex-flow: row wrap;
@@ -26,6 +27,7 @@ body.dashboard-body {
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     border-radius: 0.5rem;
+    max-height: 600px;
 }
 
 .graph-container:hover {
@@ -58,4 +60,15 @@ body.dashboard-body {
     width: 100%;
     text-align: center;
     transition: 0.2s ease-in;
+}
+
+.special {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    background-color: darkgreen;
+    color: white;
+}
+
+.special:hover {
+    transform: rotateY(360deg);
 }
