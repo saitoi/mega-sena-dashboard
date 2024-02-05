@@ -20,9 +20,21 @@
 </header>
 
 <main class="main-content">
-
     <div class="sidebar">
-        div.
+        <div class="dezenas">
+            <div id="grid-container">
+                <!-- Grid items will be added here by JavaScript -->
+            </div>
+            <script>
+                const container = document.getElementById('grid-container');
+                const itemsHtml = [...Array(60)].map((_, index) => `
+                    <div class="grid-item" data-index="${index + 1}">
+                        ${index + 1}
+                    </div>
+                `).join('');
+                container.innerHTML = itemsHtml;
+            </script>
+        </div>
     </div>
 
     <div class="graph-container" id="mean-prizes">

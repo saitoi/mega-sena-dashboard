@@ -12,16 +12,47 @@
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     border-radius: 0.5rem;
+    background-color: #FDE68A;
 }
 
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    display: block;
+.dezena {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* p-10 */
 }
 
-.sidebar a:hover {
-    color: #f1f1f1;
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 72rem;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+    cursor: pointer;
+    transition: background-color 0.3s; /* transition duration-300 */
+    flex-basis: calc(10% - 1rem);
+    margin: 0.5rem;
+    width: 25px;
+    min-width: 25px;
+    margin: 0.4rem;
+    border: 1px solid #d59528;
+}
+
+.grid-item:hover {
+    background-color: #FCD34D; /* hover:bg-amber-300 */
+}
+
+@media (max-width: 640px) {
+    .grid-item {
+        flex-basis: 20%; /* Adjust based on desired number of items per row on mobile */
+        width: 20%; /* Adjust width to match flex-basis or specific size */
+        padding: 0.25rem; /* Optionally adjust padding for even smaller items */
+    }
 }
