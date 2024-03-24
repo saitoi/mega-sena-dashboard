@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 # Load your DataFrame
-df_sena = pd.read_csv('Resultados_sena.csv')
+df_sena = pd.read_csv('../../data/sorteios-secundario.csv')
 
 # Define greenish colors for the box plots
 greenish_colors = ['#e5f5e0', '#a1d99b', '#74c476', '#41ab5d', '#238b45', '#005a32']

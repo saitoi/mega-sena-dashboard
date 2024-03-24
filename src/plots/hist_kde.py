@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 # Extraindo os dados
-df_sena = pd.read_csv('Resultados_sena.csv')
+df_sena = pd.read_csv('')
 
 df_sena['Ano'] = df_sena['Data'].apply(lambda x: x.split('/')[2])
 
