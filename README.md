@@ -5,7 +5,7 @@ Este projeto é um dashboard para visualização de resultados da Mega-Sena, a l
 
 ## Prévia - Desatualizada
 
-![Preview Dashboard Mega-sena](assets/dashboard-mega-sena-screenshot.png)
+![Preview Dashboard Mega-sena](assets/images/dashboard-mega-sena-screenshot.png)
 
 ## Recursos
 - Visualização dos resultados dos últimos sorteios.
