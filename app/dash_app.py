@@ -8,6 +8,7 @@ import plotly.graph_objs as go
 app = dash.Dash(__name__)
 
 # ***************** FICHA *****************
+import os
 
 def criar_botoes_ficha(tipo: str, inicio: int, fim: int, intervalo: int=1) -> list[html.Button]:
     """
@@ -51,6 +52,8 @@ ficha = html.Div(
     dcc.Store(id='pressed-buttons-store', data=[])
 )
 
+# VOU MUDAR FUNCAO ABAIXO
+
 @app.callback(
     Output('pressed-buttons-store', 'data'),
     [Input({'type': 'button', 'index': ALL}, 'n_clicks')],
@@ -73,7 +76,19 @@ def update_pressed_buttons(n_clicks, pressed_buttons):
 
 # ***************** TABELA DE DEZENAS SELECIONADAS *****************
 
+@app.callback(
 
+)
+def calcular_ficha_frequencia() -> None:
+    
+    pass
+
+
+df_correspondencia = 
+
+tabela_correspondencia = dash_table.DataTable(
+    data=df_
+)
 
 # ***************** HISTOGRAMA COM KDE *****************
 
@@ -115,7 +130,7 @@ hist.update_layout(
     yaxis2=dict(
         title='Número de Ganhadores',  # Right Y-axis title
         overlaying='y',
-        side='right'
+            side='right'
     ),
     plot_bgcolor='white',
     paper_bgcolor='white',
@@ -136,12 +151,22 @@ frequencia = numeros_sorteados.apply(pd.Series.value_counts).sum(axis=1).astype(
 
 df_frequencia = frequencia.reset_index().rename(columns={'index': 'Dezena', 0: 'Frequencia'}).sort_values(by='Frequencia', ascending=False)
 
+tabela_frequencia = dash_table.DataTable(
+    data=df_frequencia.to_dict('records'),
+    columns=[{'name': col, 'id': col} for col in df_frequencia.columns],
+    style_table={'height': '300px', 'overflowY': 'auto'},
+    style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'},
+    style_cell={'textAlign': 'center'},
+)
+
+# ***************** LAYOUT *****************
+
 app.layout = html.Div([
-    # Ficha Mega-Sena
-    ficha,    
+    # Ficha
+    ficha,
     
-    # Histograma com KDE
-    
+    # Histograma
+    hist,
     
     # Gráfico de Sorteios Correspondidos
     html.Div(),
