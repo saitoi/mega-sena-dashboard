@@ -20,28 +20,25 @@ def secao_jogo(numero: int) -> list:
     """Cria a seção de uma tabela de jogo com botões e opções de anulação."""
     return  html.Div([
                 html.P(f'Tabela {numero}'),
-                criar_botoes_ficha(f'dezena_{numero}', 1, 60),
-                html.P('Para anular este jogo marque: '),
-                html.Button('[  ]', id=f'anular-{numero}', className='dash-buttons'),
+                criar_botoes_ficha(f'{numero}-dezena', 1, 60),
             ])
     
 
 conteudo_central = html.Div([
     secao_jogo(1),                                                              # Tabela 1
-    secao_jogo(2),                                                              # Tabela 2
-    html.P("Assinale quantos números você está marcando nesse jogo"),
-    *criar_botoes_ficha('alternativa', 6, 16),                                   # Número de Alternativas
+    secao_jogo(2),                                                              # Tabela 2                                 # Número de Alternativas
     html.P("SURPRESINHA - Aqui o sistema escolhe os números por você. Indique \
            quantas apostas deseja fazer:"),
-    *criar_botoes_ficha('surpresinha', 1, 8),                                    # SURPRESINHA
+    *criar_botoes_ficha('0-surpresinha', 1, 8),                                  # SURPRESINHA
     html.P("TEIMOSINHA - Escolha em quantos concursos você quer participar com \
            esse mesmo jogo."),
-    *criar_botoes_ficha('teimosinha', 2, 8)                                      # TEIMOSINHA
+    *criar_botoes_ficha('0-teimosinha', 2, 8)                                      # TEIMOSINHA
 ])
 
 ficha = html.Div(
     # TODO Adicionar topbar da ficha
     html.Div(),
+    
     conteudo_central,
     dcc.Store(id='pressed-buttons-store', data=[])
 )
@@ -51,16 +48,16 @@ ficha = html.Div(
 
 # ***************** TABELA CORRESPONDENTE *****************
 
-@app.callback(
+# @app.callback(
 
-)
-def calcular_ficha_frequencia() -> None:
+# )
+# def calcular_ficha_frequencia() -> None:
     
-    pass
+#     pass
 
 
-df_correspondencia = 
+# df_correspondencia = 
 
-chosen_token_table = dash_table.DataTable(
-    data=
-)
+# chosen_token_table = dash_table.DataTable(
+#     data=
+# )
