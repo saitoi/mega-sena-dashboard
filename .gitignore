@@ -1,2 +1,10 @@
+# Editor basics
 .gitignore
 .vscode/
+
+# Python specific modules
+__pycache__/
+*.pyc
+.env
+.venv/
+*.log
