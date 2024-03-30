@@ -8,6 +8,7 @@ import plotly.graph_objs as go
 app = dash.Dash(__name__)
 
 # ***************** FICHA *****************
+
 import os
 
 def criar_botoes_ficha(tipo: str, inicio: int, fim: int, intervalo: int=1) -> list[html.Button]:

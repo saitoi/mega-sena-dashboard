@@ -1,7 +1,8 @@
 from flask import Flask
 from .dashapp import create_dash_application
+from config import Config
 
-def create_app():
+def create_app(config_class=Config):
     """
     Creates and configures the Flask application.
 
@@ -10,6 +11,4 @@ def create_app():
     """
     flask_app = Flask(__name__)
     
-    create_dash_application(flask_app)
-    
-    return flask_app
+    return create_dash_application(flask_app)
