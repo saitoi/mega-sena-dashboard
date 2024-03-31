@@ -13,11 +13,9 @@ def create_dash_application(flask_app: Flask) -> Dash:
     Returns:
     - dash_app: The Dash application instance.
     """
-    
     dash_app = Dash(__name__, server=flask_app, url_base_pathname='/dash/', suppress_callback_exceptions=True)
     
     dash_app.layout = create_layout()
     
     register_callbacks(dash_app)
     
-    return dash_app

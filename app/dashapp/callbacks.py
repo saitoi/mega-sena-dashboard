@@ -1,14 +1,7 @@
 from dash.dependencies import Input, Output, State, ALL
 from dash import callback_context
-import dash_table
-import pandas as pd
+from components.utils import dezena_frequency_table
 
-def dezena_frequency_table(selected_buttons: set) -> None:
-    df = pd.read_csv('/../../data/sorteios-secundario.csv')
-    
-    
-    
-    pass
 
 def register_callbacks(app):
     @app.callback(
@@ -18,10 +11,10 @@ def register_callbacks(app):
     )
     def update_pressed_buttons(n_clicks, pressed_buttons_data):
         if pressed_buttons_data is None:
-            pressed_buttons_data = {}
+            pressed_buttons_data = []
 
         if callback_context.triggered:
-            button_id = callback_context.triggered[0]['prop_id'].split('.')[0]
+            button_id = callback_context.triggered[0]['props'].split('.')[0]
 
             if button_id in pressed_buttons_data:
                 pressed_buttons_data.remove(button_id)
@@ -49,25 +42,24 @@ def register_callbacks(app):
             'teimosinha': 0
         }
         
-        chosen_buttons = {
-            'table1': {},
-            'table2': {}
-        }
+        chosen_buttons = []
         
         # Defining the type of buttons
         for table, type, number in pressed_buttons_data:
             button_types_count[type] += 1
             
-            key = 'table1' if table == 1 else 'table2'
-            chosen_buttons[key].append(number)
+            chosen_buttons.append(number)
+        
+        # TODO Lógica da TEIMOSINHA
+        if button_types_count['teimosinha'] >= 1:
+            pass
             
         if button_types_count['surpresinha'] >= 1:
-            # Logica da Surpresinha
+            # Logica da SURPRESINHA
             # TODO Função para seleção aleatória dos botões
             pass
         elif 6 <= button_types_count['dezena'] <= 15:
-            # TODO Chamar função para gerar gráfico
-            pass
+            return dezena_frequency_table(chosen_buttons)
         else:
-            pass
+            print('Not enough buttons selected.')
         

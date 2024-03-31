@@ -1,7 +1,6 @@
 import pandas as pd
 import plotly.graph_objs as go
 
-
 df = pd.read_csv('data/sorteios-secundario.csv')
 
 df['Ano'] = pd.to_datetime(df['Data']).dt.year

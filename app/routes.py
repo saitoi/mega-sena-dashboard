@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request
+from flask import render_template, request
+from . import app
 
-server = Flask(__name__)
-
-@server.route('/')
-def dashboard():
-    pressed_buttons = {}
-    
-    return render_template('index.html')
+@app.route('/')
+def index():
+    dash_url = '/dash'
+    return render_template('index.html', dash_url=dash_url)

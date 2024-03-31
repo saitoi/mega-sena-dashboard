@@ -5,4 +5,3 @@ import pandas as pd
 
 simulador_app = dash.Dash(__name__)
 
-def 

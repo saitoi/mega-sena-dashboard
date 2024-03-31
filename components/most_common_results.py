@@ -1,6 +1,6 @@
 import dash_table
 import pandas as pd
-from histogram_kde import df
+from .histogram_kde import df
 
 numeros_sorteados = df.loc[:, '1ª':'6ª']
 

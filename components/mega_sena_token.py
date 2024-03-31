@@ -35,29 +35,11 @@ conteudo_central = html.Div([
     *criar_botoes_ficha('0-teimosinha', 2, 8)                                      # TEIMOSINHA
 ])
 
-ficha = html.Div(
+ficha = html.Div([
     # TODO Adicionar topbar da ficha
     html.Div(),
-    
     conteudo_central,
     dcc.Store(id='pressed-buttons-store', data=[])
-)
+])
 
 # ***************** CALLBACKS IN "callbacks.py" *****************
-
-
-# ***************** TABELA CORRESPONDENTE *****************
-
-# @app.callback(
-
-# )
-# def calcular_ficha_frequencia() -> None:
-    
-#     pass
-
-
-# df_correspondencia = 
-
-# chosen_token_table = dash_table.DataTable(
-#     data=
-# )
